@@ -1,0 +1,9 @@
+[package]
+name = "temperature_converter"
+description = "Converts temperatures between Celsius, Fahrenheit and Kelvin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
