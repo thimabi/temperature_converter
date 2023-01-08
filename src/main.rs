@@ -38,15 +38,15 @@ fn main() {
         match unit.chars().next().unwrap() {
             'C' => {
                 convert_from_c(num);
-                break;
+                continue;
             }
             'F' => {
                 convert_from_f(num);
-                break;
+                continue;
             }
             'K' => {
                 convert_from_k(num);
-                break;
+                continue;
             }
             _ => continue,
         };
