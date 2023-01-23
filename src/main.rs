@@ -18,6 +18,7 @@ fn main() {
         // Check if there are least 2 chars
         // (presumably 1 number and 1 unit)
         if temp.len() < 2 {
+            println!("\n");
             continue;
         }
 
@@ -26,29 +27,39 @@ fn main() {
         // Validate the number
         let num = match num.parse::<i32>() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("\n");
+                continue;
+            }
         };
 
         // Prevent large numbers that overflow
         if num > 5000 {
+            println!("\n");
             continue;
         }
 
         // Validate the unit and convert
         match unit.chars().next().unwrap() {
-            'C' => {
+            'C' | 'c' => {
                 convert_from_c(num);
+                println!("\n");
                 continue;
             }
-            'F' => {
+            'F' | 'f' => {
                 convert_from_f(num);
+                println!("\n");
                 continue;
             }
-            'K' => {
+            'K' | 'k' => {
                 convert_from_k(num);
+                println!("\n");
                 continue;
             }
-            _ => continue,
+            _ => {
+                println!("\n");
+                continue;
+            }
         };
     }
 }
